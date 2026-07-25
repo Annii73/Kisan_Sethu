@@ -1,0 +1,12 @@
+// If you want to enable cron scheduler, replace the commented section in server.js
+// with this code (it avoids the */ issue by using explicit hours):
+
+try {
+  const { startCronScheduler } = await import('./server/scrapers/cronScheduler.js');
+  // Every 2 hours - using explicit hours instead of */2 to avoid comment parsing issues
+  const cronSchedule = '0 0,2,4,6,8,10,12,14,16,18,20,22 * * *';
+  startCronScheduler(cronSchedule);
+} catch (err) {
+  console.log('⚠️  Cron scheduler not available:', err.message);
+}
+
