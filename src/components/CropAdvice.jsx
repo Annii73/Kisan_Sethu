@@ -68,7 +68,7 @@ const CropAdvice = ({ voiceInput }) => {
         // All done → fetch AI advice
         setLoading(true);
         try {
-          const response = await fetch('http://localhost:5001/api/crop-advice', {
+          const response = await fetch(`${import.meta.env.VITE_API_URL}/api/crop-advice`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

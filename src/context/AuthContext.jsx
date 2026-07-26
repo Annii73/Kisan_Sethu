@@ -3,7 +3,7 @@ import axios from "axios";
 
 const AuthContext = createContext();
 
-const API = "http://localhost:5001/api/auth";
+const API = `${import.meta.env.VITE_API_URL}/api/auth`;
 // Agar backend 5001 pe hai to upar 5000 ki jagah 5001 kar dena.
 
 export const useAuth = () => {

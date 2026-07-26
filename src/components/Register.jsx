@@ -3,7 +3,7 @@ import axios from "axios";
 import { Sprout } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 
-const API = "http://localhost:5001/api/auth";
+const API = `${import.meta.env.VITE_API_URL}/api/auth`;
 // Agar backend 5001 pe hai to 5000 -> 5001
 
 const Register = () => {

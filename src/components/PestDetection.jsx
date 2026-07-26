@@ -229,7 +229,7 @@ export default function PestDetection() {
       const mimeType = file.type || 'image/jpeg';
   
       try {
-        const response = await fetch('http://localhost:5001/api/pest-detection', {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/pest-detection`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ image: base64Data, mimeType }),

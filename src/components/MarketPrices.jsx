@@ -34,7 +34,7 @@ const MarketPrices = () => {
       // Try to use proxy first, fallback to direct URL
       const apiUrl = import.meta.env.DEV 
         ? '/api/live-mandi-prices'  // Use proxy in development
-        : 'http://localhost:5001/api/live-mandi-prices';  // Direct URL in production
+        : `${import.meta.env.VITE_API_URL}/api/live-mandi-prices`;  // Direct URL in production
 
       const response = await fetch(apiUrl, {
         headers: {
