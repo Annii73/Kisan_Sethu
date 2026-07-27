@@ -3,7 +3,7 @@ import { MessageCircle, Send, User, Bot, Loader } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useLanguage } from '../context/LanguageContext';
 
-const Chatbot = () => {
+const Chatbot = ({ voiceInput }) => {
   const { user } = useAuth();
   const { t } = useLanguage();
   const [messages, setMessages] = useState([
@@ -21,6 +21,15 @@ const Chatbot = () => {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  const lastVoiceInput = useRef('');
+
+useEffect(() => {
+  if (voiceInput && voiceInput !== lastVoiceInput.current) {
+    lastVoiceInput.current = voiceInput;
+    setInputMessage(voiceInput);
+  }
+}, [voiceInput]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -195,5 +204,5 @@ if (data.success && data.text) {
     </div>
   );
 };
-
+ 
 export default Chatbot;

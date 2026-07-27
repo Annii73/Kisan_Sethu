@@ -246,7 +246,7 @@ function AppContent() {
             <Route path="/weather" element={<Weather />} />
             <Route path="/market-prices" element={<MarketPrices />} />
             <Route path="/learning-hub" element={<LearningHub />} />
-            <Route path="/chatbot" element={<Chatbot />} />
+            <Route path="/chatbot" element={<Chatbot voiceInput={voiceInput} />} />
             <Route path="/scheme-finder" element={<SchemeFinder />} />
             <Route path="/pest-detection" element={<PestDetection />} />
             <Route path="/feedback" element={<Feedback />} />
