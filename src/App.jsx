@@ -15,7 +15,6 @@ import PestDetection from './components/PestDetection';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import Navigation from './components/Navigation';
-import { initializeApp } from './utils/initializeApp';
 import Register from "./components/Register";
 // --- Voice Control Component ---
 const MicIcon = ({ isListening }) => (
@@ -158,14 +157,8 @@ function AppContent() {
   const [appInitialized, setAppInitialized] = useState(false);
   const [voiceInput, setVoiceInput] = useState('');
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const initialize = async () => {
-      await initializeApp();
-      setAppInitialized(true);
-    };
-    initialize();
-  }, []);
+ 
+  const [appInitialized] = useState(true);
 
   useEffect(() => {
     if (darkMode) document.documentElement.classList.add('dark');
