@@ -33,33 +33,31 @@ const Feedback = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-
+  
     try {
-      // Store feedback in database with error handling
-      const response = await fetch('https://builder.empromptu.ai/api_tools/templates/call_postgres', {
+      const token = localStorage.getItem("token");
+  
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/feedback`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer 78c603dd15a83e48927e7dc52b2a8a6c',
-          'X-Generated-App-ID': 'fb966449-837b-4a1b-b874-1afcdcab3e35',
-          'X-Usage-Key': 'bea07626d89ebd2a9ab76e0ada0b62ad'
+          'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify({
-          query: `INSERT INTO newschema_fb966449837b4a1bb8741afcdcab3e35.feedback 
-                   (user_phone, rating, category, message, suggestions, created_at) 
-                   VALUES ($1, $2, $3, $4, $5, NOW())`,
-          params: [user.phoneNumber, feedback.rating, feedback.category, feedback.message, feedback.suggestions]
+          rating: feedback.rating,
+          category: feedback.category,
+          message: feedback.message,
+          suggestions: feedback.suggestions
         })
       });
-
+  
       if (!response.ok) {
         console.error('Failed to save feedback to database');
       }
-
+  
       setSubmitted(true);
     } catch (error) {
       console.error('Error submitting feedback:', error);
-      // Still show success to user even if database save fails
       setSubmitted(true);
     }
     setLoading(false);

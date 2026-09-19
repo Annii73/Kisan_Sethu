@@ -5,6 +5,7 @@ import { GoogleGenAI } from "@google/genai";
 
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
+import feedbackRoutes from "./routes/feedbackRoutes.js";
 //import getMandiPrices from "./scrapers/mandiScraper.js";
 
 async function getMandiPricesFromDataGov() {
@@ -52,6 +53,7 @@ app.use(cors());
 app.use(express.json({ limit: '10mb'}));
 
 app.use("/api/auth", authRoutes);
+app.use("/api/feedback", feedbackRoutes);
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
