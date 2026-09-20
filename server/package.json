@@ -14,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@google/genai": "^2.13.0",
+    "@upstash/redis": "^1.38.4",
     "axios": "^1.13.2",
     "bcryptjs": "^3.0.3",
     "cheerio": "^1.1.2",
