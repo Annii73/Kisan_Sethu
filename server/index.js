@@ -10,6 +10,7 @@ import feedbackRoutes from "./routes/feedbackRoutes.js";
 import cropAdviceRoutes from "./routes/cropAdviceRoutes.js";
 import pestDetectionRoutes from "./routes/pestDetectionRoutes.js";
 import mandiRoutes from "./routes/mandiRoutes.js";
+import errorMiddleware from "./middleware/errorMiddleware.js";
 
 dotenv.config();
 connectDB();
@@ -47,6 +48,7 @@ const PORT = process.env.PORT || 5001;
 app.get("/api/health", (req, res) => {
   res.json({ status: "ok", timestamp: new Date().toISOString() });
 });
+app.use(errorMiddleware);
 app.listen(PORT, () => {
   console.log(`✅ Server running on http://localhost:${PORT}`);
 });
