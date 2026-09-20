@@ -7,7 +7,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --testEnvironment node",
+    "test:watch": "node --experimental-vm-modules node_modules/.bin/jest --watch"
   },
   "keywords": [],
   "author": "",
@@ -30,6 +31,12 @@
     "node-fetch": "^3.3.2"
   },
   "devDependencies": {
-    "nodemon": "^3.1.14"
+    "@types/jest": "^30.0.0",
+    "jest": "^30.5.2",
+    "nodemon": "^3.1.14",
+    "supertest": "^7.2.2"
+  },
+  "jest": {
+    "transform": {}
   }
 }
