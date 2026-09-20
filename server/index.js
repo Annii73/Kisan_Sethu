@@ -44,6 +44,9 @@ if (!process.env.GEMINI_API_KEY) {
 }
 
 const PORT = process.env.PORT || 5001;
+app.get("/api/health", (req, res) => {
+  res.json({ status: "ok", timestamp: new Date().toISOString() });
+});
 app.listen(PORT, () => {
   console.log(`✅ Server running on http://localhost:${PORT}`);
 });
