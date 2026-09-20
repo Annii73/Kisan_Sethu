@@ -144,17 +144,11 @@ const VoiceControl = ({ navigate, toggleDarkMode, toggleLanguage, onVoiceInput }
 // --- Main AppContent ---
 function AppContent() {
   const { user, loading } = useAuth();
-  if (loading) {
-    return (
-      <div className="min-h-screen flex justify-center items-center">
-        Loading...
-      </div>
-    );
-  }
+  
   const { language, toggleLanguage } = useLanguage();
   const [darkMode, setDarkMode] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [appInitialized, setAppInitialized] = useState(false);
+  
   const [voiceInput, setVoiceInput] = useState('');
   const navigate = useNavigate();
  
@@ -165,6 +159,13 @@ function AppContent() {
     else document.documentElement.classList.remove('dark');
   }, [darkMode]);
 
+  if (loading) {
+    return (
+      <div className="min-h-screen flex justify-center items-center">
+        Loading...
+      </div>
+    );
+  }
   const toggleDarkMode = () => setDarkMode(!darkMode);
 
   if (!appInitialized) {

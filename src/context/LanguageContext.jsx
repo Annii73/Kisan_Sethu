@@ -313,7 +313,7 @@ const translations = {
     getCropAdvice: 'పంట సలహా పొందండి',
     weather: 'వాతావరణం',
     marketPrices: 'మార్కెట్ ధరలు',
-    learningHub: 'లెర్నింగ్ హబ్',
+    
     chatbot: 'సహాయం',
     schemeFinder: 'యోజనల శోధకుడు',
     feedback: 'ఫీడ్‌బ్యాక్',
@@ -372,7 +372,7 @@ const translations = {
     weatherAlerts: 'வானிலை எச்சரிக்கைகள்',
     askAiHelper: 'AI உதவியாளரை கேளுங்கள்',
     aiCropAdvice: 'AI பயிர் ஆலோசனை',
-    learningHub: 'கற்றல் மையம்',
+    
     aiFarmingAssistant: 'AI விவசாய உதவியாளர்',
     governmentSchemesTitle: 'அரசு திட்டங்கள்',
     learningHubTitle: 'கற்றல் மையம்',
@@ -413,7 +413,6 @@ const translations = {
     weatherAlerts: 'ಹವಾಮಾನ ಎಚ್ಚರಿಕೆಗಳು',
     askAiHelper: 'AI ಸಹಾಯಕರನ್ನು ಕೇಳಿ',
     aiCropAdvice: 'AI ಬೆಳೆ ಸಲಹೆ',
-    learningHub: 'ಕಲಿಕಾ ಕೇಂದ್ರ',
     aiFarmingAssistant: 'AI ಕೃಷಿ ಸಹಾಯಕ',
     governmentSchemesTitle: 'ಸರ್ಕಾರ್ ಯೋಜನೆಗಳು',
     learningHubTitle: 'ಕಲಿಕಾ ಕೇಂದ್ರ',
@@ -437,7 +436,7 @@ const translations = {
     getCropAdvice: 'पीक सल्ला घ्या',
     weather: 'हवामान',
     marketPrices: 'बाजारभाव',
-    learningHub: 'अभ्यास केंद्र',
+    
     chatbot: 'मदत',
     schemeFinder: 'योजना शोध',
     feedback: 'अभिप्राय',
@@ -497,7 +496,7 @@ const translations = {
     weatherAlerts: 'ਮੌਸਮ ਸੂਚਨਾਵਾਂ',
     askAiHelper: 'AI ਮਦਦਗਾਰ ਨੂੰ ਪੁੱਛੋ',
     aiCropAdvice: 'AI ਫਸਲ ਸਲਾਹ',
-    learningHub: 'ਲਰਨਿੰਗ ਹੱਬ',
+    
     aiFarmingAssistant: 'AI ਖੇਤੀ ਸਹਾਇਕ',
     governmentSchemesTitle: 'ਸਰਕਾਰੀ ਯੋਜਨਾਵਾਂ',
     learningHubTitle: 'ਲਰਨਿੰਗ ਹੱਬ',
