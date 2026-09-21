@@ -11,6 +11,7 @@ import cropAdviceRoutes from "./routes/cropAdviceRoutes.js";
 import pestDetectionRoutes from "./routes/pestDetectionRoutes.js";
 import mandiRoutes from "./routes/mandiRoutes.js";
 import errorMiddleware from "./middleware/errorMiddleware.js";
+import chatbotRoutes from "./routes/chatbotRoutes.js";
 
 dotenv.config();
 connectDB();
@@ -36,6 +37,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/crop-advice", aiLimiter, cropAdviceRoutes);
 app.use("/api/pest-detection",aiLimiter, pestDetectionRoutes);
 app.use("/api/live-mandi-prices", mandiRoutes);
+app.use("/api/chatbot", chatbotRoutes);
 
 
 if (!process.env.GEMINI_API_KEY) {
