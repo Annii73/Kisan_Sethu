@@ -28,7 +28,7 @@ useEffect(() => {
   if (voiceInput && voiceInput !== lastVoiceInput.current) {
     lastVoiceInput.current = voiceInput;
     setInputMessage(voiceInput);
-  }
+  } 
 }, [voiceInput]);
 
   const scrollToBottom = () => {
@@ -52,9 +52,12 @@ useEffect(() => {
     setLoading(true);
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/crop-advice`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/chatbot`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem("token")}`
+        },
         body: JSON.stringify({
           prompt: `You are Kisaan Sethu AI, a helpful farming assistant for Indian farmers. 
           The user is ${user?.name || 'Farmer'} from ${user?.location || 'India'} 
