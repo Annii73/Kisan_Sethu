@@ -231,7 +231,10 @@ export default function PestDetection() {
       try {
         const response = await fetch(`${import.meta.env.VITE_API_URL}/api/pest-detection`, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem("token")}`
+          },
           body: JSON.stringify({ image: base64Data, mimeType }),
         });
   

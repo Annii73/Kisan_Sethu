@@ -66,11 +66,14 @@ const CropAdvice = ({ voiceInput }) => {
         setCurrentQuestionIndex((prev) => prev + 1);
       } else {
         // All done → fetch AI advice
-        setLoading(true);
+        setLoading(true); 
         try {
           const response = await fetch(`${import.meta.env.VITE_API_URL}/api/crop-advice`, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${localStorage.getItem("token")}`
+            },
             body: JSON.stringify({
               prompt: `As an expert agricultural advisor for Indian farmers, provide detailed practical advice for this farmer profile:
 Location: ${user.location || 'India'},
